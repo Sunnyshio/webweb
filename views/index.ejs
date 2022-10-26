@@ -66,6 +66,14 @@
             <div class="logo">
                 <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
             </div>
+            <div class="row container">
+
+                <% for(var index=0; index < itemData.length; index++){ %>
+                    <h5>
+                        <%= itemData[index].data()['name']%>
+                    </h5>
+                    
+            </div>
             <!-- Amado Nav -->
             <nav class="amado-nav">
                 <ul>
