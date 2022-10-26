@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Product Page </title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="public/img/core-img/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/main.css" rel="stylesheet" />
+    </head>
+
+        <!-- Section-->
+        <body>
+                <div class = 'leftpane'> 
+                    <%- include('../partials/navbar'); %>
+                    <div style="width: 50%; float: left;"> 
+                    <div class="card">
+                        <div class="card-image">
+                                            <img src="<%= itemData['photoUrl'][0];%>" width="250px" height="200px" >
+                                            <img src="<%= itemData['photoUrl'][1];%>" width="250px" height="200px" >
+                        </div>
+                    </div>
+                </div>
+                <div class = "rightpane">                 
+                    <div style="margin-left: 50%;"> 
+                            <h3 class="card-title">
+                                Name: <%= itemData["name"] %>
+                                    <div class="card-content">
+                                        <p>Price: <%= itemData["price"] %>
+                                            <br> 
+                                            Description: <%= itemData["description"] %>
+                                        </p>
+                                        <form>
+                                            <label>Enter Procurement Count: </label>
+                                            <input type ="number" id="AddBox"></input>
+                                            <input type = 'button' onclick ="addRow()" value = "Add data">  
+                                            <button onclick="myDeleteFunction()">Delete row</button>  
+                                        </form> 
+                                        <div class="table-responsive-md"></div>
+                                        <table class="table table-bordered" border="5" cellspacing="2" cellpadding="1" id ="myTable" >
+                                            <thead>
+                                                <tr>
+                                                <th style="text-align:left">Date/Time</th>
+                                                <th style="text-align:right">Quantity</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <% var totalQty = 0; %>
+                                                <% for (var index=0;  index < hist_array.length; index++){ %> 
+                                                <tr>
+                                                    <td style="text-align:left"><%= hist_array[index].dateCreated.toDate();%></td>
+                                                    <td style="text-align:justify"><%= (hist_array[index].Quantity);%></td>              
+                                                </tr>
+                                            </tbody>  
+                                            <p><% totalQty += (hist_array[index].Quantity);%> </p>
+                                            <% } %> 
+                                        </table>
+                                        <p id="totalQty">Total Quantity: <%= totalQty%> kilos </p> 
+                                        <script>
+                                            function addRow() {
+                                                    var table =  document.getElementById("myTable");
+                                                    var qty = document.getElementById("AddBox").value*1;
+                                                    var totalQty =document.getElementById("totalQty"); 
+                                                    var sum = 0;
+                                                    var row = table.insertRow(-1);
+                                                    var cell1 = row.insertCell(0);
+                                                    var cell2 = row.insertCell(1);
+                                                    cell2.innerHTML = qty;
+                                                    cell1.innerHTML = new Date();
+                                                        for(var i = 1; i < table.rows.length; i++)
+                                                        {
+                                                        sum = sum + parseInt(table.rows[i].cells[1].innerHTML); 
+                                                        }
+                                                    document.getElementById("totalQty").innerHTML="Total Quantity: " + sum;}
+                                                    function myDeleteFunction() {
+                                                    document.getElementById("myTable").deleteRow(-1);
+                                                    }
+                                                                            
+                                        </script>
+                                </div>
+                            </div>
+                        </div>
+     
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+     
+    </body>
+</html>
