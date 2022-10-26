@@ -28,24 +28,39 @@ app.get('/', async function (req, res) {
 });
 
 app.get('/item/:itemid', async function (req, res) {
-  try {
-      console.log(req.params.itemid);
-
-  } catch (e) {
-  }
-  const item_id = req.params.itemid;
-  const item_ref = ingColl.doc(item_id);
-  const doc = await item_ref.get();
-  let itemData = doc.data();
-
-  const procure_ref = itemColl.doc(item_id).collection('sales1')
-  hist_array=[]
-  await procure_ref.get().then(subCol => {
-    subCol.docs.forEach(element => {
-        hist_array.push(element.data());
-    })
-    console.log('Procurement data:', hist_array)
-
-    res.render('item', {itemData, db, hist_array})
+    try {
+        console.log(req.params.itemid);
+  
+    } catch (e) {
+    }
+    const item_id = req.params.itemid;
+    const item_ref = ingColl.doc(item_id);
+    const doc = await item_ref.get();
+    if (!doc.exists) {
+        console.log('No such document!');
+    } else {
+        console.log('Document data:', doc.data());
+    }
+    // const items = await ingColl.get();
+    let data = {
+        url: req.url,
+        itemData: doc.data(),
+    }
+    res.render('item', data);
   });
-});
+  
+  app.get("/", (req, res) => {
+      res.render("index");
+  })
+  // set the port of our application
+  // process.env.PORT lets the port be set by Heroku
+  var port = process.env.PORT || 8080;
+  
+  // make express look in the public directory for assets (css/js/img)
+  app.use(express.static(__dirname + '/public'));
+  
+  
+  app.listen(port, function() {
+    console.log('Our app is running on http://localhost:' + port);
+  });
+  
