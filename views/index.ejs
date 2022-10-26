@@ -16,7 +16,7 @@
                     <img src="<%= itemData[index].data()['photoUrl'] %>" alt="Bags" class="product-item">
                 <figcaption>
                     <h3><%= itemData[index].data()['name'] %></h3>
-                    <div class="item-price">₱ <%
+                    <div>₱ <%
                         parseFloat(itemData[index].data()['price']).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') %> </div>
                 </figcaption>
             </figure>
