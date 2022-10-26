@@ -66,31 +66,7 @@
             <div class="logo">
                 <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
             </div>
-            <div class="row container">
-
-                <% for(var index=0; index < itemData.length; index++){ %>
-                    <div class="col s4">
-                        <a href="/item/<%= itemData[index].id %>">
-                            <div class="card center-align">
-                                <div class="card-image">
-                                    <img src="<%= itemData[index].data()['photoUrl'] %>">
-                                </div>
-
-                                <div class="card-body" style="padding-bottom: 5px;">
-                                    <h3 class="card-title  center-align">
-                                        <%= itemData[index].data()['name'] %>
-                                    </h3>
-                                    <h5 class="card-text center-align">
-                                        ₱ <%=
-                                            parseFloat(itemData[index].data()['price']).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'
-                                            ) %>
-                                    </h5>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                <% } %>
-            </div>
+            
             <!-- Amado Nav -->
             <nav class="amado-nav">
                 <ul>
@@ -121,7 +97,31 @@
             </div>
         </header>
         <!-- Header Area End -->
+        <div class="row container">
 
+            <% for(var index=0; index < itemData.length; index++){ %>
+                <div class="col s4">
+                    <a href="/item/<%= itemData[index].id %>">
+                        <div class="card center-align">
+                            <div class="card-image">
+                                <img src="<%= itemData[index].data()['photoUrl'] %>">
+                            </div>
+
+                            <div class="card-body" style="padding-bottom: 5px;">
+                                <h3 class="card-title  center-align">
+                                    <%= itemData[index].data()['name'] %>
+                                </h3>
+                                <h5 class="card-text center-align">
+                                    ₱ <%=
+                                        parseFloat(itemData[index].data()['price']).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'
+                                        ) %>
+                                </h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            <% } %>
+        </div>
         <!-- Product Catagories Area Start -->
         <div class="products-catagories-area clearfix">
             <div class="amado-pro-catagory clearfix">
