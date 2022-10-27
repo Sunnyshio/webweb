@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <script src="https://cdn.tailwindcss.com"></script>
         <title>Luxe For Goods</title>
 
@@ -281,22 +281,30 @@
       
                 <p class="italic text-sm mt-2 text-center">Aenean ante nisi, gravida non mattis semper.</p>
               </div>
+              
+              <div class="h-60 grid grid-cols-5 gap-5 content-start p-8 m-65 my-8">
+
+                <% for(var index=0; index < itemData.length; index++){ %>
+                    <div>
+                        <figure class="product-style" data-aos="fade-up" cursor-pointer"></figure>
+                            <img src="<%= itemData[index].data()['photoUrl'] %>" alt="Bags" class="product-item">
+                        <figcaption>
+                            <h3><%= itemData[index].data()['name'] %></h3>
+                            <div class="item-price">₱ <%
+                                parseFloat(itemData[index].data()['price']).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') %> </div>
+                        </figcaption>
+                    </figure>
+                    </div>
+                <% } %>
+            </div>
+        
             </div>
           </section>
           <!-- end testimonials -->
-      
-          <!-- start blog -->
-          <section class="relative bg-white px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-32">
-            <div class="">
-              <h2 class="text-3xl leading-tight font-bold">Luxury Bag Blogs</h2>
-              <p class="text-gray-600 mt-2 md:max-w-lg">Get the latest update on Luxury Brands from The APC to Hermes.</p>
-      
-              <a href="#" title="" class="inline-block text-teal-500 font-semibold mt-6 mt:md-0">View All Posts</a>
-            </div>
-      
+
           <!-- start cta -->
           <section
-            class="relative bg-blue-teal-gradient px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 text-center md:text-left">
+            class="relative bg-blue-teal-gradient px-4 sm:px-8 lg:px-16 xl:px-30 2xl:px-64 py-12 text-center md:text-left">
             <div class="md:flex md:items-center md:justify-center">
               <h2 class="text-xl font-bold text-white">Get in touch with us today! <br class="block md:hidden">Call us on: +1
                 562-789-1935</h2>
@@ -308,7 +316,7 @@
           <!-- end cta -->
       
           <!-- start footer -->
-          <footer class="relative bg-gray-900 text-white px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 lg:py-24">
+          <footer class="relative bg-gray-900 text-white px-4 sm:px-8 lg:px-16 xl:px-30 2xl:px-64 py-12 lg:py-24">
             <div class="flex flex-col md:flex-row">
               <div class="w-full lg:w-2/6 lg:mx-4 lg:pr-8">
                 <h3 class="font-bold text-2xl">Luxe For Goods</h3>
