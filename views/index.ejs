@@ -266,15 +266,15 @@
             </div>
       
           <!-- start testimonials -->
-          <section class="relative bg-white px-4 sm:px-8 lg:px-16 xl:px-60 2xl:px-60 py-20 lg:py-20">
+          <section class="relative bg-gray-400 px-4 sm:px-8 lg:px-16 xl:px-60 2xl:px-60 py-20 lg:py-20">
             <div class="h-40 grid grid-cols-4 gap-6 content-start p-8 m-40 my-8">
 
               <% for(var index=0; index < itemData.length; index++){ %>
-                  <div class="rounded-corners">
+                  <div>
                       <figure class="product-style" data-aos="fade-up" cursor-pointer"></figure>
                           <img class="border-teal-400 rounded hover:grow hover:shadow-lg dcf-w-100%" src="<%= itemData[index].data()['photoUrl'] %>" alt="Bags" class="product-item">
                       <figcaption>
-                          <h3><%= itemData[index].data()['name'] %></h3>
+                          <h3 class="font-sans"><%= itemData[index].data()['name'] %></h3>
                           <div class="item-price">₱ <%
                               parseFloat(itemData[index].data()['price']).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') %> </div>
                       </figcaption>
