@@ -37,7 +37,7 @@
 
         <% for(var index=0; index < itemData.length; index++){ %>
             <div>
-                <figure class="product-style" data-aos="fade-up"></figure>
+                <figure class="product-style" data-aos="fade-up" cursor-pointer"></figure>
                     <img src="<%= itemData[index].data()['photoUrl'] %>" alt="Bags" class="product-item">
                 <figcaption>
                     <h3><%= itemData[index].data()['name'] %></h3>
