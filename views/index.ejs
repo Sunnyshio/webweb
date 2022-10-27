@@ -272,7 +272,7 @@
               <% for(var index=0; index < itemData.length; index++){ %>
                   <div>
                       <figure class="product-style" data-aos="fade-up" cursor-pointer"></figure>
-                          <img class="hover:grow hover:shadow-lg" src="<%= itemData[index].data()['photoUrl'] %>" alt="Bags" class="product-item">
+                          <img class="hover:grow hover:shadow-lg rounded-corners" src="<%= itemData[index].data()['photoUrl'] %>" alt="Bags" class="product-item">
                       <figcaption>
                           <h3><%= itemData[index].data()['name'] %></h3>
                           <div class="item-price">₱ <%
