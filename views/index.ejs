@@ -188,15 +188,15 @@
                 <nav
                   class="w-full bg-white md:bg-transparent rounded shadow-lg px-6 py-4 mt-4 text-center md:p-0 md:mt-0 md:shadow-none">
                   <ul class="md:flex items-center">
-                    <li><a class="py-2 inline-block md:text-white md:hidden lg:block font-semibold" href="#">About Us</a></li>
+                    <li><a class="hover:text-teal-400 py-2 inline-block md:text-white md:hidden lg:block font-semibold" href="#">About Us</a></li>
                     <li class="md:ml-4"><a class="hover:text-teal-400 y-2 inline-block md:text-white md:px-2 font-semibold"
                         href="#">Products</a></li>
                     <li class="md:ml-4"><a class="hover:text-teal-400 py-2 inline-block md:text-white md:px-2 font-semibold"
                         href="#">New Arrivals</a></li>
                     <li class="md:ml-4 md:hidden lg:block"><a class="hover:text-teal-400 py-2 inline-block md:text-white md:px-2 font-semibold"
                         href="#">Discounts</a></li>
-                    <li class="md:ml-4"><a class="hover:text-teal-400 py-2 inline-block md:text-white md:px-2 font-semibold" href="#">Contact
-                        Us</a></li>
+                    <li class="md:ml-4"><a class="hover:text-teal-400 py-2 inline-block md:text-white md:px-2 font-semibold" href="#">My Cart
+                    </a></li>
                     <li class="md:ml-6 mt-3 md:mt-0">
                       <a class="hover:text-teal-400 inline-block font-semibold px-4 py-2 text-white bg-blue-600 md:bg-transparent md:text-white border border-white rounded"
                         href="book-appointment.html">Book The Showroom</a>
@@ -218,7 +218,7 @@
       
               <div class="lg:w-3/4 xl:w-2/4 relative z-10 h-100 lg:mt-16">
                 <div>
-                  <h1 class="text-white text-4xl md:text-5xl xl:text-6xl font-bold leading-tight">Welcome to Luxe For Goods!.</h1>
+                  <h1 class="text-white text-4xl md:text-5xl xl:text-6xl font-bold leading-tight">Welcome to Luxe For Goods!</h1>
                   <p class="text-blue-100 text-xl md:text-2xl leading-snug mt-4">Your go to luxury bags just got more accessible. 
                     Contact or visit our showroom now!</p>
                   <a href="#" class="px-8 py-4 bg-teal-500 text-white rounded inline-block mt-8 font-semibold">Book The Showroom</a>
@@ -270,9 +270,9 @@
             <div class="h-40 grid grid-cols-4 gap-6 content-start p-8 m-40 my-8">
 
               <% for(var index=0; index < itemData.length; index++){ %>
-                  <div>
+                  <div class="rounded-corners">
                       <figure class="product-style" data-aos="fade-up" cursor-pointer"></figure>
-                          <img class="rounded-corners hover:grow hover:shadow-lg dcf-w-100%" src="<%= itemData[index].data()['photoUrl'] %>" alt="Bags" class="product-item">
+                          <img class="border-teal-400 rounded hover:grow hover:shadow-lg dcf-w-100%" src="<%= itemData[index].data()['photoUrl'] %>" alt="Bags" class="product-item">
                       <figcaption>
                           <h3><%= itemData[index].data()['name'] %></h3>
                           <div class="item-price">₱ <%
