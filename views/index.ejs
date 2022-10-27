@@ -266,13 +266,13 @@
             </div>
       
           <!-- start testimonials -->
-          <section class="relative bg-gray-400 px-4 sm:px-8 lg:px-16 xl:px-60 2xl:px-60 py-20 lg:py-20">
+          <section class="relative rounded bg-gray-400 px-4 sm:px-8 lg:px-16 xl:px-60 2xl:px-60 py-8 lg:py-8">
             <div class="h-40 grid grid-cols-4 gap-6 content-start p-8 m-30 my-5">
 
               <% for(var index=0; index < itemData.length; index++){ %>
                   <div>
                       <figure class="product-style" data-aos="fade-up" cursor-pointer"></figure>
-                          <img class="h-60 w-auto rounded hover:grow hover:shadow-lg hover:scale-105" src="<%= itemData[index].data()['photoUrl'] %>" alt="Bags" class="product-item">
+                          <img class="h-60 w-auto rounded hover:grow hover:shadow-lg hover:scale-105 duration-300" src="<%= itemData[index].data()['photoUrl'] %>" alt="Bags" class="product-item">
                       <figcaption>
                           <h3 class="font-sans"><%= itemData[index].data()['name'] %></h3>
                           <div class="item-price">₱ <%
