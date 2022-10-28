@@ -282,12 +282,12 @@
                       <figure class="product-style" data-aos="fade-up" cursor-pointer"></figure>
                           <img class="h-60 w-auto rounded hover:grow hover:shadow-lg hover:scale-105 duration-300" src="<%= itemData[index].data()['photoUrl'] %>" alt="Bags" class="product-item">
                           <div class="px-4 py-3 w-72">
-                            <p class="text-gray-600 font-sans block truncate capitalize">New Arrival</p>
+                            <p class="text-white font-sans block truncate capitalize"><%= itemData[index].data()['name'] %></p>
                           </div>
                       <figcaption>
-                          <h3 class="font-sans"><%= itemData[index].data()['name'] %></h3>
                           <div class="item-price">$ <%=
                               parseFloat(itemData[index].data()['price']).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') %> </div>
+                              <h3 class="font-sans">"icons her"</h3>
                       </figcaption>
                       </figure>
                   </div>
