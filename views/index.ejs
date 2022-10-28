@@ -280,9 +280,9 @@
               <% for(var index=0; index < itemData.length; index++){ %>
                   <div>
                       <figure class="product-style" data-aos="fade-up" cursor-pointer"></figure>
-                          <img class="h-60 w-auto rounded items-center hover:grow hover:shadow-lg hover:scale-105 duration-300" src="<%= itemData[index].data()['photoUrl'] %>" alt="Bags" class="product-item">
+                          <img class="h-60 w-auto rounded items-center hover:grow hover:shadow-lg hover:scale-105 duration-300 ml-3" src="<%= itemData[index].data()['photoUrl'] %>" alt="Bags" class="product-item">
                           <div class="px-4 py-3 w-72">
-                            <p class="text-white text-center font-sans block truncate capitalize"><%= itemData[index].data()['brand'] %></p>
+                            <p class="text-white font-sans block truncate capitalize"><%= itemData[index].data()['brand'] %></p>
                           </div>
                       <figcaption>
                         <h3 class="font-sans text-center"><%= itemData[index].data()['name'] %></h3>
