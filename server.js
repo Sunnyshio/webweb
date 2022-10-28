@@ -50,7 +50,7 @@ app.get('/item/:itemid', async function (req, res) {
   });
   
   app.get("/", (req, res) => {
-      res.render("index");
+      res.render("item");
   })
   // set the port of our application
   // process.env.PORT lets the port be set by Heroku
